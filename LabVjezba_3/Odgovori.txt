@@ -1,0 +1,5 @@
+1. Spaja client socket sa server socketom
+2. To je jedan od portova koji spada u raspon 49152–65535 a taj je raspon u TCP prokotolu rezerviran za klijentske portove u 
+klijent-posluzitelj komunikaciji
+
+nisam uspia naæ gdje server sluša na ispisu konekcija
