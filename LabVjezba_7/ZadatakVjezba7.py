@@ -1,4 +1,3 @@
-from errno import ECONNREFUSED
 from functools import partial
 from multiprocessing import Pool
 import multiprocessing as mp
