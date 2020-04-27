@@ -11,6 +11,7 @@ print("Program je pokrenut na računalu:")
 print (socket.gethostname())
 print ("Program pokrenut u:")
 print (datetime.datetime.now())
+PocetnoVrime = time.time()
 
 target = input('Unesite adresu: ')
 
@@ -32,10 +33,9 @@ def threads():
    while True:    
       worker = q.get()      
       ports(worker)      
-      q.task_done()
-     
+      q.task_done()     
+
 q = Queue()
-PocetnoVrime = time.time()
  
 for x in range(200):   
    t = threading.Thread(target = threads)

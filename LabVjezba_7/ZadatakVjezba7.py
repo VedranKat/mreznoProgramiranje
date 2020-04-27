@@ -7,12 +7,14 @@ import time
 import datetime
 
 def ping(host, port):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
-        socket.socket().connect((host, port))
+        s.connect((host, port))
         print(str(port) + " - Otvoren") 
-        return       
-    except Exception:
-        return     
+        s.close()               
+    except Exception:        
+        s.close()
+        pass
 
 
 def scan_ports(host):
