@@ -15,14 +15,12 @@ def ping(host, port):
         s.close()
         pass
 
-
 def scan_ports(host):
     od = input('Pocetni port: ')
     do = input('Zadnji port: ')
     p = Pool(mp.cpu_count()*2)
     ping_host = partial(ping, host)
     p.map(ping_host, range(int(od), int(do)))
-
 
 def main():      
     print("Program je pokrenut na računalu:")
@@ -31,16 +29,15 @@ def main():
     print (datetime.datetime.now())
     
     PocetnoVrime = time.time()
-    target = input('Unesite adresu: ')
     
+    target = input('Unesite adresu: ')    
     host = socket.gethostbyname(target)
-    socket.setdefaulttimeout(0.55)
-    
+    socket.setdefaulttimeout(0.55)    
         
     scan_ports(host)   
+
     trajanje = float("%0.3f" % (time.time() - PocetnoVrime))
     print("Skeniranje je trajalo: ", trajanje, "sekunde")
-
 
 if __name__ == "__main__":
     main()
